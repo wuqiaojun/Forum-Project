@@ -1,9 +1,9 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied'); hookscriptoutput('discuz');
 0
-|| checktplrefresh('./template/default/forum/discuz.htm', './template/default/common/header.htm', 1354265161, 'diy', './data/template/1_diy_forum_discuz.tpl.php', './template/default', 'forum/discuz')
-|| checktplrefresh('./template/default/forum/discuz.htm', './template/default/common/footer.htm', 1354265161, 'diy', './data/template/1_diy_forum_discuz.tpl.php', './template/default', 'forum/discuz')
-|| checktplrefresh('./template/default/forum/discuz.htm', './template/default/common/header_common.htm', 1354265161, 'diy', './data/template/1_diy_forum_discuz.tpl.php', './template/default', 'forum/discuz')
-|| checktplrefresh('./template/default/forum/discuz.htm', './template/default/common/pubsearchform.htm', 1354265161, 'diy', './data/template/1_diy_forum_discuz.tpl.php', './template/default', 'forum/discuz')
+|| checktplrefresh('./template/default/forum/discuz.htm', './template/default/common/header.htm', 1354357340, 'diy', './data/template/1_diy_forum_discuz.tpl.php', './template/default', 'forum/discuz')
+|| checktplrefresh('./template/default/forum/discuz.htm', './template/default/common/footer.htm', 1354357340, 'diy', './data/template/1_diy_forum_discuz.tpl.php', './template/default', 'forum/discuz')
+|| checktplrefresh('./template/default/forum/discuz.htm', './template/default/common/header_common.htm', 1354357340, 'diy', './data/template/1_diy_forum_discuz.tpl.php', './template/default', 'forum/discuz')
+|| checktplrefresh('./template/default/forum/discuz.htm', './template/default/common/pubsearchform.htm', 1354357340, 'diy', './data/template/1_diy_forum_discuz.tpl.php', './template/default', 'forum/discuz')
 ;?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -50,11 +50,11 @@
 <?php if($_GET['diy'] == 'yes' && check_diy_perm($topic)) { include template('common/header_diy'); } if(check_diy_perm($topic)) { ?><?php
 $__STATICURL = STATICURL;$diynav = <<<EOF
 
-<a id="diy-tg" href="javascript:openDiy();" title="´ò¿ª DIY Ãæ°å" class="xi1 xw1" onmouseover="showMenu(this.id)"><img src="{$__STATICURL}image/diy/panel-toggle.png" alt="DIY" /></a>
+<a id="diy-tg" href="javascript:openDiy();" title="æ‰“å¼€ DIY é¢æ¿" class="xi1 xw1" onmouseover="showMenu(this.id)"><img src="{$__STATICURL}image/diy/panel-toggle.png" alt="DIY" /></a>
 <div id="diy-tg_menu" style="display: none;">
 <ul>
-<li><a href="javascript:saveUserdata('diy_advance_mode', '');openDiy();" class="xi2">¼ò½àÄ£Ê½</a></li>
-<li><a href="javascript:saveUserdata('diy_advance_mode', '1');openDiy();" class="xi2">¸ß¼¶Ä£Ê½</a></li>
+<li><a href="javascript:saveUserdata('diy_advance_mode', '');openDiy();" class="xi2">ç®€æ´æ¨¡å¼</a></li>
+<li><a href="javascript:saveUserdata('diy_advance_mode', '1');openDiy();" class="xi2">é«˜çº§æ¨¡å¼</a></li>
 </ul>
 </div>
 
@@ -64,7 +64,7 @@ EOF;
 <?php echo $diynav;?>
 <?php } if(empty($topic) || $topic['useheader']) { if($_G['setting']['mobile']['allowmobile'] && (!$_G['setting']['cacheindexlife'] && !$_G['setting']['cachethreadon'] || $_G['uid']) && ($_GET['diy'] != 'yes' || !$_GET['inajax']) && ($_G['mobile'] != '' && $_G['cookie']['mobile'] == '' && $_GET['mobile'] != 'no')) { ?>
 <div class="xi1 bm bm_c">
-    ÇëÑ¡Ôñ <a href="<?php echo $_G['siteurl'];?>forum.php?mobile=yes">½øÈëÊÖ»ú°æ</a> <span class="xg1">|</span> <a href="<?php echo $_G['setting']['mobile']['nomobileurl'];?>">¼ÌĞø·ÃÎÊµçÄÔ°æ</a>
+    è¯·é€‰æ‹© <a href="<?php echo $_G['siteurl'];?>forum.php?mobile=yes">è¿›å…¥æ‰‹æœºç‰ˆ</a> <span class="xg1">|</span> <a href="<?php echo $_G['setting']['mobile']['nomobileurl'];?>">ç»§ç»­è®¿é—®ç”µè„‘ç‰ˆ</a>
 </div>
 <?php } ?>
 
@@ -75,10 +75,10 @@ EOF;
 <?php if(!empty($_G['setting']['pluginhooks']['global_cpnav_extra1'])) echo $_G['setting']['pluginhooks']['global_cpnav_extra1'];?>
 </div>
 <div class="y">
-<a id="switchblind" href="javascript:;" onclick="toggleBlind(this)" title="¿ªÆô¸¨Öú·ÃÎÊ" class="switchblind">¿ªÆô¸¨Öú·ÃÎÊ</a>
+<a id="switchblind" href="javascript:;" onclick="toggleBlind(this)" title="å¼€å¯è¾…åŠ©è®¿é—®" class="switchblind">å¼€å¯è¾…åŠ©è®¿é—®</a>
 <?php if(!empty($_G['setting']['pluginhooks']['global_cpnav_extra2'])) echo $_G['setting']['pluginhooks']['global_cpnav_extra2'];?><?php if(is_array($_G['setting']['topnavs']['1'])) foreach($_G['setting']['topnavs']['1'] as $nav) { if($nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))) { ?><?php echo $nav['code'];?><?php } } if(empty($_G['disabledwidthauto']) && $_G['setting']['switchwidthauto']) { ?>
-<a href="javascript:;" onclick="widthauto(this)"><?php if(widthauto()) { ?>ÇĞ»»µ½Õ­°æ<?php } else { ?>ÇĞ»»µ½¿í°æ<?php } ?></a>
-<?php } if($_G['uid'] && !empty($_G['style']['extstyle'])) { ?><a id="sslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'sslct','pos':'34!'})});">ÇĞ»»·ç¸ñ</a><?php } if(check_diy_perm($topic)) { ?>
+<a href="javascript:;" onclick="widthauto(this)"><?php if(widthauto()) { ?>åˆ‡æ¢åˆ°çª„ç‰ˆ<?php } else { ?>åˆ‡æ¢åˆ°å®½ç‰ˆ<?php } ?></a>
+<?php } if($_G['uid'] && !empty($_G['style']['extstyle'])) { ?><a id="sslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'sslct','pos':'34!'})});">åˆ‡æ¢é£æ ¼</a><?php } if(check_diy_perm($topic)) { ?>
 <?php echo $diynav;?>
 <?php } ?>
 </div>
@@ -87,7 +87,7 @@ EOF;
 
 <?php if(!IS_ROBOT) { if($_G['uid'] && !empty($_G['style']['extstyle'])) { ?>
 <div id="sslct_menu" class="cl p_pop" style="display: none;">
-<?php if(!$_G['style']['defaultextstyle']) { ?><span class="sslct_btn" onclick="extstyle('')" title="Ä¬ÈÏ"><i></i></span><?php } if(is_array($_G['style']['extstyle'])) foreach($_G['style']['extstyle'] as $extstyle) { ?><span class="sslct_btn" onclick="extstyle('<?php echo $extstyle['0'];?>')" title="<?php echo $extstyle['1'];?>"><i style='background:<?php echo $extstyle['2'];?>'></i></span>
+<?php if(!$_G['style']['defaultextstyle']) { ?><span class="sslct_btn" onclick="extstyle('')" title="é»˜è®¤"><i></i></span><?php } if(is_array($_G['style']['extstyle'])) foreach($_G['style']['extstyle'] as $extstyle) { ?><span class="sslct_btn" onclick="extstyle('<?php echo $extstyle['0'];?>')" title="<?php echo $extstyle['1'];?>"><i style='background:<?php echo $extstyle['2'];?>'></i></span>
 <?php } ?>
 </div>
 <?php } ?>
@@ -100,11 +100,11 @@ EOF;
 </ul>
 <?php } elseif($_G['connectguest']) { ?>
 <div class="ptm pbw hm">
-ÇëÏÈ<br /><a class="xi2" href="member.php?mod=connect"><strong>ÍêÉÆÕÊºÅĞÅÏ¢</strong></a> »ò <a href="member.php?mod=connect&amp;ac=bind" class="xi2 xw1"><strong>°ó¶¨ÒÑÓĞÕÊºÅ</strong></a><br />ºóÊ¹ÓÃ¿ì½İµ¼º½
+è¯·å…ˆ<br /><a class="xi2" href="member.php?mod=connect"><strong>å®Œå–„å¸å·ä¿¡æ¯</strong></a> æˆ– <a href="member.php?mod=connect&amp;ac=bind" class="xi2 xw1"><strong>ç»‘å®šå·²æœ‰å¸å·</strong></a><br />åä½¿ç”¨å¿«æ·å¯¼èˆª
 </div>
 <?php } else { ?>
 <div class="ptm pbw hm">
-Çë <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>µÇÂ¼</strong></a> ºóÊ¹ÓÃ¿ì½İµ¼º½<br />Ã»ÓĞÕÊºÅ£¿<a href="member.php?mod=<?php echo $_G['setting']['regname'];?>" class="xi2 xw1"><?php echo $_G['setting']['reglinkname'];?></a>
+è¯· <a href="javascript:;" class="xi2" onclick="lsSubmit()"><strong>ç™»å½•</strong></a> åä½¿ç”¨å¿«æ·å¯¼èˆª<br />æ²¡æœ‰å¸å·ï¼Ÿ<a href="member.php?mod=<?php echo $_G['setting']['regname'];?>" class="xi2 xw1"><?php echo $_G['setting']['reglinkname'];?></a>
 </div>
 <?php } ?>
 </div>
@@ -116,38 +116,38 @@ EOF;
 <div id="um">
 <div class="avt y"><a href="home.php?mod=space&amp;uid=<?php echo $_G['uid'];?>"><?php echo avatar($_G[uid],small);?></a></div>
 <p>
-<strong class="vwmy<?php if($_G['setting']['connect']['allow'] && $_G['member']['conisbind']) { ?> qq<?php } ?>"><a href="home.php?mod=space&amp;uid=<?php echo $_G['uid'];?>" target="_blank" title="·ÃÎÊÎÒµÄ¿Õ¼ä"><?php echo $_G['member']['username'];?></a></strong>
+<strong class="vwmy<?php if($_G['setting']['connect']['allow'] && $_G['member']['conisbind']) { ?> qq<?php } ?>"><a href="home.php?mod=space&amp;uid=<?php echo $_G['uid'];?>" target="_blank" title="è®¿é—®æˆ‘çš„ç©ºé—´"><?php echo $_G['member']['username'];?></a></strong>
 <?php if($_G['group']['allowinvisible']) { ?>
 <span id="loginstatus">
-<a id="loginstatusid" href="member.php?mod=switchstatus" title="ÇĞ»»ÔÚÏß×´Ì¬" onclick="ajaxget(this.href, 'loginstatus');return false;" class="xi2"></a>
+<a id="loginstatusid" href="member.php?mod=switchstatus" title="åˆ‡æ¢åœ¨çº¿çŠ¶æ€" onclick="ajaxget(this.href, 'loginstatus');return false;" class="xi2"></a>
 </span>
 <?php } ?>
 <?php if(!empty($_G['setting']['pluginhooks']['global_usernav_extra1'])) echo $_G['setting']['pluginhooks']['global_usernav_extra1'];?>
-<span class="pipe">|</span><?php if(!empty($_G['setting']['pluginhooks']['global_usernav_extra4'])) echo $_G['setting']['pluginhooks']['global_usernav_extra4'];?><a href="home.php?mod=spacecp">ÉèÖÃ</a>
-<span class="pipe">|</span><a href="home.php?mod=space&amp;do=pm" id="pm_ntc"<?php if($_G['member']['newpm']) { ?> class="new"<?php } ?>>ÏûÏ¢</a>
-<span class="pipe">|</span><a href="home.php?mod=space&amp;do=notice" id="myprompt"<?php if($_G['member']['newprompt']) { ?> class="new"<?php } ?>>ÌáĞÑ<?php if($_G['member']['newprompt']) { ?>(<?php echo $_G['member']['newprompt'];?>)<?php } ?></a><span id="myprompt_check"></span>
-<?php if($_G['setting']['taskon'] && !empty($_G['cookie']['taskdoing_'.$_G['uid']])) { ?><span class="pipe">|</span><a href="home.php?mod=task&amp;item=doing" id="task_ntc" class="new">½øĞĞÖĞµÄÈÎÎñ</a><?php } if(($_G['group']['allowmanagearticle'] || $_G['group']['allowpostarticle'] || $_G['group']['allowdiy'] || getstatus($_G['member']['allowadmincp'], 4) || getstatus($_G['member']['allowadmincp'], 6) || getstatus($_G['member']['allowadmincp'], 2) || getstatus($_G['member']['allowadmincp'], 3))) { ?>
-<span class="pipe">|</span><a href="portal.php?mod=portalcp"><?php if($_G['setting']['portalstatus'] ) { ?>ÃÅ»§¹ÜÀí<?php } else { ?>Ä£¿é¹ÜÀí<?php } ?></a>
+<span class="pipe">|</span><?php if(!empty($_G['setting']['pluginhooks']['global_usernav_extra4'])) echo $_G['setting']['pluginhooks']['global_usernav_extra4'];?><a href="home.php?mod=spacecp">è®¾ç½®</a>
+<span class="pipe">|</span><a href="home.php?mod=space&amp;do=pm" id="pm_ntc"<?php if($_G['member']['newpm']) { ?> class="new"<?php } ?>>æ¶ˆæ¯</a>
+<span class="pipe">|</span><a href="home.php?mod=space&amp;do=notice" id="myprompt"<?php if($_G['member']['newprompt']) { ?> class="new"<?php } ?>>æé†’<?php if($_G['member']['newprompt']) { ?>(<?php echo $_G['member']['newprompt'];?>)<?php } ?></a><span id="myprompt_check"></span>
+<?php if($_G['setting']['taskon'] && !empty($_G['cookie']['taskdoing_'.$_G['uid']])) { ?><span class="pipe">|</span><a href="home.php?mod=task&amp;item=doing" id="task_ntc" class="new">è¿›è¡Œä¸­çš„ä»»åŠ¡</a><?php } if(($_G['group']['allowmanagearticle'] || $_G['group']['allowpostarticle'] || $_G['group']['allowdiy'] || getstatus($_G['member']['allowadmincp'], 4) || getstatus($_G['member']['allowadmincp'], 6) || getstatus($_G['member']['allowadmincp'], 2) || getstatus($_G['member']['allowadmincp'], 3))) { ?>
+<span class="pipe">|</span><a href="portal.php?mod=portalcp"><?php if($_G['setting']['portalstatus'] ) { ?>é—¨æˆ·ç®¡ç†<?php } else { ?>æ¨¡å—ç®¡ç†<?php } ?></a>
 <?php } if($_G['uid'] && $_G['group']['radminid'] > 1) { ?>
-<span class="pipe">|</span><a href="forum.php?mod=modcp&amp;fid=<?php echo $_G['fid'];?>" target="_blank"><?php echo $_G['setting']['navs']['2']['navname'];?>¹ÜÀí</a>
+<span class="pipe">|</span><a href="forum.php?mod=modcp&amp;fid=<?php echo $_G['fid'];?>" target="_blank"><?php echo $_G['setting']['navs']['2']['navname'];?>ç®¡ç†</a>
 <?php } if($_G['uid'] && $_G['adminid'] == 1 && $_G['setting']['cloud_status']) { ?>
-<span class="pipe">|</span><a href="admin.php?frames=yes&amp;action=cloud&amp;operation=applist" target="_blank">ÔÆÆ½Ì¨</a>
+<span class="pipe">|</span><a href="admin.php?frames=yes&amp;action=cloud&amp;operation=applist" target="_blank">äº‘å¹³å°</a>
 <?php } if($_G['uid'] && getstatus($_G['member']['allowadmincp'], 1)) { ?>
-<span class="pipe">|</span><a href="admin.php" target="_blank">¹ÜÀíÖĞĞÄ</a>
+<span class="pipe">|</span><a href="admin.php" target="_blank">ç®¡ç†ä¸­å¿ƒ</a>
 <?php } ?>
 <?php if(!empty($_G['setting']['pluginhooks']['global_usernav_extra2'])) echo $_G['setting']['pluginhooks']['global_usernav_extra2'];?>
-<span class="pipe">|</span><a href="member.php?mod=logging&amp;action=logout&amp;formhash=<?php echo FORMHASH;?>">ÍË³ö</a>
+<span class="pipe">|</span><a href="member.php?mod=logging&amp;action=logout&amp;formhash=<?php echo FORMHASH;?>">é€€å‡º</a>
 </p>
 <p>
-<?php if(!empty($_G['setting']['pluginhooks']['global_usernav_extra3'])) echo $_G['setting']['pluginhooks']['global_usernav_extra3'];?><?php $upgradecredit = $_G['uid'] && $_G['group']['grouptype'] == 'member' && $_G['group']['groupcreditslower'] != 999999999 ? $_G['group']['groupcreditslower'] - $_G['member']['credits'] : false;?><a href="home.php?mod=spacecp&amp;ac=credit&amp;showcredit=1" id="extcreditmenu"<?php if(!$_G['setting']['bbclosed']) { ?> onmouseover="delayShow(this, showCreditmenu);" class="showmenu"<?php } ?>>»ı·Ö: <?php echo $_G['member']['credits'];?></a>
-<span class="pipe">|</span>ÓÃ»§×é: <a href="home.php?mod=spacecp&amp;ac=usergroup"<?php if($upgradecredit !== 'false') { ?> id="g_upmine" class="xi2" onmouseover="delayShow(this, showUpgradeinfo)"<?php } ?>><?php echo $_G['group']['grouptitle'];?></a>
+<?php if(!empty($_G['setting']['pluginhooks']['global_usernav_extra3'])) echo $_G['setting']['pluginhooks']['global_usernav_extra3'];?><?php $upgradecredit = $_G['uid'] && $_G['group']['grouptype'] == 'member' && $_G['group']['groupcreditslower'] != 999999999 ? $_G['group']['groupcreditslower'] - $_G['member']['credits'] : false;?><a href="home.php?mod=spacecp&amp;ac=credit&amp;showcredit=1" id="extcreditmenu"<?php if(!$_G['setting']['bbclosed']) { ?> onmouseover="delayShow(this, showCreditmenu);" class="showmenu"<?php } ?>>ç§¯åˆ†: <?php echo $_G['member']['credits'];?></a>
+<span class="pipe">|</span>ç”¨æˆ·ç»„: <a href="home.php?mod=spacecp&amp;ac=usergroup"<?php if($upgradecredit !== 'false') { ?> id="g_upmine" class="xi2" onmouseover="delayShow(this, showUpgradeinfo)"<?php } ?>><?php echo $_G['group']['grouptitle'];?></a>
 </p>
 </div>
 <?php } elseif(!empty($_G['cookie']['loginuser'])) { ?>
 <p>
 <strong><a id="loginuser" class="noborder"><?php echo dhtmlspecialchars($_G['cookie']['loginuser']); ?></a></strong>
-<span class="pipe">|</span><a href="member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href)">¼¤»î</a>
-<span class="pipe">|</span><a href="member.php?mod=logging&amp;action=logout&amp;formhash=<?php echo FORMHASH;?>">ÍË³ö</a>
+<span class="pipe">|</span><a href="member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href)">æ¿€æ´»</a>
+<span class="pipe">|</span><a href="member.php?mod=logging&amp;action=logout&amp;formhash=<?php echo FORMHASH;?>">é€€å‡º</a>
 </p>
 <?php } elseif(!$_G['connectguest']) { include template('member/login_simple'); } else { ?>
 <div id="um">
@@ -155,18 +155,18 @@ EOF;
 <p>
 <strong class="vwmy qq"><?php echo $_G['member']['username'];?></strong>
 <?php if(!empty($_G['setting']['pluginhooks']['global_usernav_extra1'])) echo $_G['setting']['pluginhooks']['global_usernav_extra1'];?>
-<span class="pipe">|</span><a href="member.php?mod=logging&amp;action=logout&amp;formhash=<?php echo FORMHASH;?>">ÍË³ö</a>
+<span class="pipe">|</span><a href="member.php?mod=logging&amp;action=logout&amp;formhash=<?php echo FORMHASH;?>">é€€å‡º</a>
 </p>
 <p>
-<a href="home.php?mod=spacecp&amp;ac=credit&amp;showcredit=1">»ı·Ö: 0</a>
-<span class="pipe">|</span>ÓÃ»§×é: <?php echo $_G['group']['grouptitle'];?>
+<a href="home.php?mod=spacecp&amp;ac=credit&amp;showcredit=1">ç§¯åˆ†: 0</a>
+<span class="pipe">|</span>ç”¨æˆ·ç»„: <?php echo $_G['group']['grouptitle'];?>
 </p>
 </div>
 <?php } ?>
 </div>
 
 <div id="nv">
-<a href="javascript:;" id="qmenu" onmouseover="showMenu({'ctrlid':'qmenu','pos':'34!','ctrlclass':'a','duration':2});">¿ì½İµ¼º½</a>
+<a href="javascript:;" id="qmenu" onmouseover="showMenu({'ctrlid':'qmenu','pos':'34!','ctrlclass':'a','duration':2});">å¿«æ·å¯¼èˆª</a>
 <ul><?php if(is_array($_G['setting']['navs'])) foreach($_G['setting']['navs'] as $nav) { if($nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))) { ?><li <?php if($mnid == $nav['navid']) { ?>class="a" <?php } ?><?php echo $nav['nav'];?>></li><?php } } ?>
 </ul>
 <?php if(!empty($_G['setting']['pluginhooks']['global_nav_extra'])) echo $_G['setting']['pluginhooks']['global_nav_extra'];?>
@@ -186,23 +186,23 @@ EOF;
 <?php } } } ?>
 </div><?php echo adshow("subnavbanner/a_mu");?><?php if($_G['setting']['search']) { ?><?php $slist = array();?><?php if($_G['fid'] && $_G['forum']['status'] != 3 && $mod != 'group') { ?><?php
 $slist[forumfid] = <<<EOF
-<li><a href="javascript:;" rel="curforum" fid="{$_G['fid']}" >±¾°æ</a></li>
+<li><a href="javascript:;" rel="curforum" fid="{$_G['fid']}" >æœ¬ç‰ˆ</a></li>
 EOF;
 ?><?php } if($_G['setting']['portalstatus'] && $_G['setting']['search']['portal']['status'] && ($_G['group']['allowsearch'] & 1 || $_G['adminid'] == 1)) { ?><?php
 $slist[portal] = <<<EOF
-<li><a href="javascript:;" rel="article">ÎÄÕÂ</a></li>
+<li><a href="javascript:;" rel="article">æ–‡ç« </a></li>
 EOF;
 ?><?php } if($_G['setting']['search']['forum']['status'] && ($_G['group']['allowsearch'] & 2 || $_G['adminid'] == 1)) { ?><?php
 $slist[forum] = <<<EOF
-<li><a href="javascript:;" rel="forum" class="curtype">Ìû×Ó</a></li>
+<li><a href="javascript:;" rel="forum" class="curtype">å¸–å­</a></li>
 EOF;
 ?><?php } if(helper_access::check_module('blog') && $_G['setting']['search']['blog']['status'] && ($_G['group']['allowsearch'] & 4 || $_G['adminid'] == 1)) { ?><?php
 $slist[blog] = <<<EOF
-<li><a href="javascript:;" rel="blog">ÈÕÖ¾</a></li>
+<li><a href="javascript:;" rel="blog">æ—¥å¿—</a></li>
 EOF;
 ?><?php } if(helper_access::check_module('album') && $_G['setting']['search']['album']['status'] && ($_G['group']['allowsearch'] & 8 || $_G['adminid'] == 1)) { ?><?php
 $slist[album] = <<<EOF
-<li><a href="javascript:;" rel="album">Ïà²á</a></li>
+<li><a href="javascript:;" rel="album">ç›¸å†Œ</a></li>
 EOF;
 ?><?php } if($_G['setting']['groupstatus'] && $_G['setting']['search']['group']['status'] && ($_G['group']['allowsearch'] & 16 || $_G['adminid'] == 1)) { ?><?php
 $slist[group] = <<<EOF
@@ -210,7 +210,7 @@ $slist[group] = <<<EOF
 EOF;
 ?><?php } ?><?php
 $slist[user] = <<<EOF
-<li><a href="javascript:;" rel="user">ÓÃ»§</a></li>
+<li><a href="javascript:;" rel="user">ç”¨æˆ·</a></li>
 EOF;
 ?>
 <?php } if($_G['setting']['search'] && $slist) { ?>
@@ -243,13 +243,13 @@ EOF;
 <table cellspacing="0" cellpadding="0">
 <tr>
 <td class="scbar_icon_td"></td>
-<td class="scbar_txt_td"><input type="text" name="srchtxt" id="scbar_txt" value="ÇëÊäÈëËÑË÷ÄÚÈİ" autocomplete="off" x-webkit-speech speech /></td>
-<td class="scbar_type_td"><a href="javascript:;" id="scbar_type" class="showmenu xg1 xs2" onclick="showMenu(this.id)" hidefocus="true">ËÑË÷</a></td>
-<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2 xs2">ËÑË÷</strong></button></td>
+<td class="scbar_txt_td"><input type="text" name="srchtxt" id="scbar_txt" value="è¯·è¾“å…¥æœç´¢å†…å®¹" autocomplete="off" x-webkit-speech speech /></td>
+<td class="scbar_type_td"><a href="javascript:;" id="scbar_type" class="showmenu xg1 xs2" onclick="showMenu(this.id)" hidefocus="true">æœç´¢</a></td>
+<td class="scbar_btn_td"><button type="submit" name="searchsubmit" id="scbar_btn" sc="1" class="pn pnc" value="true"><strong class="xi2 xs2">æœç´¢</strong></button></td>
 <td class="scbar_hot_td">
 <div id="scbar_hot">
 <?php if($_G['setting']['srchhotkeywords']) { ?>
-<strong class="xw1">ÈÈËÑ: </strong><?php if(is_array($_G['setting']['srchhotkeywords'])) foreach($_G['setting']['srchhotkeywords'] as $val) { if($val=trim($val)) { ?><?php $valenc=rawurlencode($val);?><?php
+<strong class="xw1">çƒ­æœ: </strong><?php if(is_array($_G['setting']['srchhotkeywords'])) foreach($_G['setting']['srchhotkeywords'] as $val) { if($val=trim($val)) { ?><?php $valenc=rawurlencode($val);?><?php
 $__FORMHASH = FORMHASH;$srchhotkeywords[] = <<<EOF
 
 
@@ -294,7 +294,7 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
 <div class="y">
 <div id="an">
 <dl class="cl">
-<dt class="z xw1">¹«¸æ:&nbsp;</dt>
+<dt class="z xw1">å…¬å‘Š:&nbsp;</dt>
 <dd>
 <div id="anc"><ul id="ancl"><?php echo $announcements;?></ul></div>
 </dd>
@@ -304,7 +304,7 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
 </div>
 <?php } ?>
 <div class="z">
-<a href="./" class="nvhm" title="Ê×Ò³"><?php echo $_G['setting']['bbname'];?></a><em>&raquo;</em><a href="forum.php"<?php if($_G['setting']['forumjump']) { ?> id="fjump" onmouseover="delayShow(this, 'showForummenu(<?php echo $_G['fid'];?>)');" class="showmenu"<?php } ?>><?php echo $_G['setting']['navs']['2']['navname'];?></a><?php echo $navigation;?>
+<a href="./" class="nvhm" title="é¦–é¡µ"><?php echo $_G['setting']['bbname'];?></a><em>&raquo;</em><a href="forum.php"<?php if($_G['setting']['forumjump']) { ?> id="fjump" onmouseover="delayShow(this, 'showForummenu(<?php echo $_G['fid'];?>)');" class="showmenu"<?php } ?>><?php echo $_G['setting']['navs']['2']['navname'];?></a><?php echo $navigation;?>
 </div>
 <div class="z"><?php if(!empty($_G['setting']['pluginhooks']['index_status_extra'])) echo $_G['setting']['pluginhooks']['index_status_extra'];?></div>
 </div>
@@ -323,10 +323,10 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
 <div id="ct" class="wp cl<?php if($_G['setting']['forumallowside']) { ?> ct2<?php } ?>">
 <?php if(empty($gid)) { ?>
 <div id="chart" class="bm bw0 cl">
-<p class="chart z">½ñÈÕ: <em><?php echo $todayposts;?></em><span class="pipe">|</span>×òÈÕ: <em><?php echo $postdata['0'];?></em><span class="pipe">|</span>Ìû×Ó: <em><?php echo $posts;?></em><span class="pipe">|</span>»áÔ±: <em><?php echo $_G['cache']['userstats']['totalmembers'];?></em><?php if($_G['cache']['userstats']['newsetuser']) { ?><span class="pipe">|</span>»¶Ó­ĞÂ»áÔ±: <em><a href="home.php?mod=space&amp;username=<?php echo rawurlencode($_G['cache']['userstats']['newsetuser']); ?>" target="_blank" class="xi2"><?php echo $_G['cache']['userstats']['newsetuser'];?></a></em><?php } ?></p>
+<p class="chart z">ä»Šæ—¥: <em><?php echo $todayposts;?></em><span class="pipe">|</span>æ˜¨æ—¥: <em><?php echo $postdata['0'];?></em><span class="pipe">|</span>å¸–å­: <em><?php echo $posts;?></em><span class="pipe">|</span>ä¼šå‘˜: <em><?php echo $_G['cache']['userstats']['totalmembers'];?></em><?php if($_G['cache']['userstats']['newsetuser']) { ?><span class="pipe">|</span>æ¬¢è¿æ–°ä¼šå‘˜: <em><a href="home.php?mod=space&amp;username=<?php echo rawurlencode($_G['cache']['userstats']['newsetuser']); ?>" target="_blank" class="xi2"><?php echo $_G['cache']['userstats']['newsetuser'];?></a></em><?php } ?></p>
 <div class="y">
 <?php if(!empty($_G['setting']['pluginhooks']['index_nav_extra'])) echo $_G['setting']['pluginhooks']['index_nav_extra'];?>
-<?php if($_G['uid']) { ?><a href="forum.php?mod=guide&amp;view=my" title="ÎÒµÄÌû×Ó" class="xi2">ÎÒµÄÌû×Ó</a><?php } if(!empty($_G['setting']['search']['forum']['status'])) { if($_G['uid']) { ?><span class="pipe">|</span><?php } ?><a href="forum.php?mod=guide&amp;view=new" title="²é¿´ĞÂÌû" class="xi2">²é¿´ĞÂÌû</a><?php } ?>
+<?php if($_G['uid']) { ?><a href="forum.php?mod=guide&amp;view=my" title="æˆ‘çš„å¸–å­" class="xi2">æˆ‘çš„å¸–å­</a><?php } if(!empty($_G['setting']['search']['forum']['status'])) { if($_G['uid']) { ?><span class="pipe">|</span><?php } ?><a href="forum.php?mod=guide&amp;view=new" title="æŸ¥çœ‹æ–°å¸–" class="xi2">æŸ¥çœ‹æ–°å¸–</a><?php } ?>
 </div>
 </div>
 <?php } ?>
@@ -337,7 +337,7 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
 <?php if(!empty($_G['cache']['heats']['message'])) { ?>
 <div class="bm">
 <div class="bm_h cl">
-<h2><?php echo $_G['setting']['navs']['2']['navname'];?>ÈÈµã</h2>
+<h2><?php echo $_G['setting']['navs']['2']['navname'];?>çƒ­ç‚¹</h2>
 </div>
 <div class="bm_c cl">
 <div class="heat z"><?php if(is_array($_G['cache']['heats']['message'])) foreach($_G['cache']['heats']['message'] as $data) { ?><dl class="xld">
@@ -359,9 +359,9 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
 <?php if(empty($gid) && !empty($forum_favlist)) { ?><?php $forumscount = count($forum_favlist);?><?php $forumcolumns = $forumscount > 3 ? ($forumscount == 4 ? 4 : 5) : 1;?><?php $forumcolwidth = (floor(100 / $forumcolumns) - 0.1).'%';?><div class="bm bmw <?php if($forumcolumns) { ?> flg<?php } ?> cl">
 <div class="bm_h cl">
 <span class="o">
-<img id="category_0_img" src="<?php echo IMGDIR;?>/<?php echo $collapse['collapseimg_0'];?>" title="ÊÕÆğ/Õ¹¿ª" alt="ÊÕÆğ/Õ¹¿ª" onclick="toggle_collapse('category_0');" />
+<img id="category_0_img" src="<?php echo IMGDIR;?>/<?php echo $collapse['collapseimg_0'];?>" title="æ”¶èµ·/å±•å¼€" alt="æ”¶èµ·/å±•å¼€" onclick="toggle_collapse('category_0');" />
 </span>
-<h2><a href="home.php?mod=space&amp;do=favorite&amp;type=forum">ÎÒÊÕ²ØµÄ°æ¿é</a></h2>
+<h2><a href="home.php?mod=space&amp;do=favorite&amp;type=forum">æˆ‘æ”¶è—çš„ç‰ˆå—</a></h2>
 </div>
 <div id="category_0" class="bm_c" style="<?php echo $collapse['category_0']; ?>">
 <table cellspacing="0" cellpadding="0" class="fl_tb">
@@ -379,19 +379,19 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
 <?php } ?>
 </div>
 <dl<?php if(!empty($forum['extra']['iconwidth']) && !empty($forum['icon'])) { ?> style="margin-left: <?php echo $forum['extra']['iconwidth'];?>px;"<?php } ?>>
-<dt><a href="<?php echo $forumurl;?>"<?php if($forum['redirect']) { ?> target="_blank"<?php } if($forum['extra']['namecolor']) { ?> style="color: <?php echo $forum['extra']['namecolor'];?>;"<?php } ?>><?php echo $forum['name'];?></a><?php if($forum['todayposts'] && !$forum['redirect']) { ?><em class="xw0 xi1" title="½ñÈÕ"> (<?php echo $forum['todayposts'];?>)</em><?php } ?></dt>
-<?php if(empty($forum['redirect'])) { ?><dd><em>Ö÷Ìâ: <?php echo dnumber($forum['threads']); ?></em>, <em>ÌûÊı: <?php echo dnumber($forum['posts']); ?></em></dd><?php } ?>
+<dt><a href="<?php echo $forumurl;?>"<?php if($forum['redirect']) { ?> target="_blank"<?php } if($forum['extra']['namecolor']) { ?> style="color: <?php echo $forum['extra']['namecolor'];?>;"<?php } ?>><?php echo $forum['name'];?></a><?php if($forum['todayposts'] && !$forum['redirect']) { ?><em class="xw0 xi1" title="ä»Šæ—¥"> (<?php echo $forum['todayposts'];?>)</em><?php } ?></dt>
+<?php if(empty($forum['redirect'])) { ?><dd><em>ä¸»é¢˜: <?php echo dnumber($forum['threads']); ?></em>, <em>å¸–æ•°: <?php echo dnumber($forum['posts']); ?></em></dd><?php } ?>
 <dd>
 <?php if($forum['permission'] == 1) { ?>
-Ë½ÃÜ°æ¿é
+ç§å¯†ç‰ˆå—
 <?php } else { if($forum['redirect']) { ?>
-<a href="<?php echo $forumurl;?>" class="xi2">Á´½Óµ½Íâ²¿µØÖ·</a>
+<a href="<?php echo $forumurl;?>" class="xi2">é“¾æ¥åˆ°å¤–éƒ¨åœ°å€</a>
 <?php } elseif(is_array($forum['lastpost'])) { if($forumcolumns < 3) { ?>
 <a href="forum.php?mod=redirect&amp;tid=<?php echo $forum['lastpost']['tid'];?>&amp;goto=lastpost#lastpost" class="xi2"><?php echo cutstr($forum['lastpost']['subject'], 30); ?></a> <cite><?php echo $forum['lastpost']['dateline'];?> <?php if($forum['lastpost']['author']) { ?><?php echo $forum['lastpost']['author'];?><?php } else { ?><?php echo $_G['setting']['anonymoustext'];?><?php } ?></cite>
 <?php } else { ?>
-<a href="forum.php?mod=redirect&amp;tid=<?php echo $forum['lastpost']['tid'];?>&amp;goto=lastpost#lastpost">×îºó·¢±í: <?php echo $forum['lastpost']['dateline'];?></a>
+<a href="forum.php?mod=redirect&amp;tid=<?php echo $forum['lastpost']['tid'];?>&amp;goto=lastpost#lastpost">æœ€åå‘è¡¨: <?php echo $forum['lastpost']['dateline'];?></a>
 <?php } } else { ?>
-´ÓÎ´
+ä»æœª
 <?php } } ?>
 </dd>
 <?php if(!empty($_G['setting']['pluginhooks']['index_favforum_extra'][$forum[fid]])) echo $_G['setting']['pluginhooks']['index_favforum_extra'][$forum[fid]];?>
@@ -405,8 +405,8 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
 <?php } ?>
 </td>
 <td>
-<h2><a href="<?php echo $forumurl;?>"<?php if($forum['redirect']) { ?> target="_blank"<?php } if($forum['extra']['namecolor']) { ?> style="color: <?php echo $forum['extra']['namecolor'];?>;"<?php } ?>><?php echo $forum['name'];?></a><?php if($forum['todayposts'] && !$forum['redirect']) { ?><em class="xw0 xi1" title="½ñÈÕ"> (<?php echo $forum['todayposts'];?>)</em><?php } ?></h2>
-<?php if($forum['description']) { ?><p class="xg2"><?php echo $forum['description'];?></p><?php } if($forum['subforums']) { ?><p>×Ó°æ¿é: <?php echo $forum['subforums'];?></p><?php } if($forum['moderators']) { ?><p>°æÖ÷: <span class="xi2"><?php echo $forum['moderators'];?></span></p><?php } ?>
+<h2><a href="<?php echo $forumurl;?>"<?php if($forum['redirect']) { ?> target="_blank"<?php } if($forum['extra']['namecolor']) { ?> style="color: <?php echo $forum['extra']['namecolor'];?>;"<?php } ?>><?php echo $forum['name'];?></a><?php if($forum['todayposts'] && !$forum['redirect']) { ?><em class="xw0 xi1" title="ä»Šæ—¥"> (<?php echo $forum['todayposts'];?>)</em><?php } ?></h2>
+<?php if($forum['description']) { ?><p class="xg2"><?php echo $forum['description'];?></p><?php } if($forum['subforums']) { ?><p>å­ç‰ˆå—: <?php echo $forum['subforums'];?></p><?php } if($forum['moderators']) { ?><p>ç‰ˆä¸»: <span class="xi2"><?php echo $forum['moderators'];?></span></p><?php } ?>
 <?php if(!empty($_G['setting']['pluginhooks']['index_favforum_extra'][$forum[fid]])) echo $_G['setting']['pluginhooks']['index_favforum_extra'][$forum[fid]];?>
 </td>
 <td class="fl_i">
@@ -415,13 +415,13 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
 <td class="fl_by">
 <div>
 <?php if($forum['permission'] == 1) { ?>
-Ë½ÃÜ°æ¿é
+ç§å¯†ç‰ˆå—
 <?php } else { if($forum['redirect']) { ?>
-<a href="<?php echo $forumurl;?>" class="xi2">Á´½Óµ½Íâ²¿µØÖ·</a>
+<a href="<?php echo $forumurl;?>" class="xi2">é“¾æ¥åˆ°å¤–éƒ¨åœ°å€</a>
 <?php } elseif(is_array($forum['lastpost'])) { ?>
 <a href="forum.php?mod=redirect&amp;tid=<?php echo $forum['lastpost']['tid'];?>&amp;goto=lastpost#lastpost" class="xi2"><?php echo cutstr($forum['lastpost']['subject'], 30); ?></a> <cite><?php echo $forum['lastpost']['dateline'];?> <?php if($forum['lastpost']['author']) { ?><?php echo $forum['lastpost']['author'];?><?php } else { ?><?php echo $_G['setting']['anonymoustext'];?><?php } ?></cite>
 <?php } else { ?>
-´ÓÎ´
+ä»æœª
 <?php } } ?>
 </div>
 </td>
@@ -437,9 +437,9 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
 <div class="bm bmw <?php if($cat['forumcolumns']) { ?> flg<?php } ?> cl">
 <div class="bm_h cl">
 <span class="o">
-<img id="category_<?php echo $cat['fid'];?>_img" src="<?php echo IMGDIR;?>/<?php echo $cat['collapseimg'];?>" title="ÊÕÆğ/Õ¹¿ª" alt="ÊÕÆğ/Õ¹¿ª" onclick="toggle_collapse('category_<?php echo $cat['fid'];?>');" />
+<img id="category_<?php echo $cat['fid'];?>_img" src="<?php echo IMGDIR;?>/<?php echo $cat['collapseimg'];?>" title="æ”¶èµ·/å±•å¼€" alt="æ”¶èµ·/å±•å¼€" onclick="toggle_collapse('category_<?php echo $cat['fid'];?>');" />
 </span>
-<?php if($cat['moderators']) { ?><span class="y">·ÖÇø°æÖ÷: <?php echo $cat['moderators'];?></span><?php } ?><?php $caturl = !empty($cat['domain']) && !empty($_G['setting']['domain']['root']['forum']) ? 'http://'.$cat['domain'].'.'.$_G['setting']['domain']['root']['forum'] : '';?><h2><a href="<?php if(!empty($caturl)) { ?><?php echo $caturl;?><?php } else { ?>forum.php?gid=<?php echo $cat['fid'];?><?php } ?>" style="<?php if($cat['extra']['namecolor']) { ?>color: <?php echo $cat['extra']['namecolor'];?>;<?php } ?>"><?php echo $cat['name'];?></a></h2>
+<?php if($cat['moderators']) { ?><span class="y">åˆ†åŒºç‰ˆä¸»: <?php echo $cat['moderators'];?></span><?php } ?><?php $caturl = !empty($cat['domain']) && !empty($_G['setting']['domain']['root']['forum']) ? 'http://'.$cat['domain'].'.'.$_G['setting']['domain']['root']['forum'] : '';?><h2><a href="<?php if(!empty($caturl)) { ?><?php echo $caturl;?><?php } else { ?>forum.php?gid=<?php echo $cat['fid'];?><?php } ?>" style="<?php if($cat['extra']['namecolor']) { ?>color: <?php echo $cat['extra']['namecolor'];?>;<?php } ?>"><?php echo $cat['name'];?></a></h2>
 </div>
 <div id="category_<?php echo $cat['fid'];?>" class="bm_c" style="<?php echo $collapse['category_'.$cat['fid']]; ?>">
 <table cellspacing="0" cellpadding="0" class="fl_tb">
@@ -457,19 +457,19 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
 <?php } ?>
 </div>
 <dl<?php if(!empty($forum['extra']['iconwidth']) && !empty($forum['icon'])) { ?> style="margin-left: <?php echo $forum['extra']['iconwidth'];?>px;"<?php } ?>>
-<dt><a href="<?php echo $forumurl;?>"<?php if($forum['redirect']) { ?> target="_blank"<?php } if($forum['extra']['namecolor']) { ?> style="color: <?php echo $forum['extra']['namecolor'];?>;"<?php } ?>><?php echo $forum['name'];?></a><?php if($forum['todayposts'] && !$forum['redirect']) { ?><em class="xw0 xi1" title="½ñÈÕ"> (<?php echo $forum['todayposts'];?>)</em><?php } ?></dt>
-<?php if(empty($forum['redirect'])) { ?><dd><em>Ö÷Ìâ: <?php echo dnumber($forum['threads']); ?></em>, <em>ÌûÊı: <?php echo dnumber($forum['posts']); ?></em></dd><?php } ?>
+<dt><a href="<?php echo $forumurl;?>"<?php if($forum['redirect']) { ?> target="_blank"<?php } if($forum['extra']['namecolor']) { ?> style="color: <?php echo $forum['extra']['namecolor'];?>;"<?php } ?>><?php echo $forum['name'];?></a><?php if($forum['todayposts'] && !$forum['redirect']) { ?><em class="xw0 xi1" title="ä»Šæ—¥"> (<?php echo $forum['todayposts'];?>)</em><?php } ?></dt>
+<?php if(empty($forum['redirect'])) { ?><dd><em>ä¸»é¢˜: <?php echo dnumber($forum['threads']); ?></em>, <em>å¸–æ•°: <?php echo dnumber($forum['posts']); ?></em></dd><?php } ?>
 <dd>
 <?php if($forum['permission'] == 1) { ?>
-Ë½ÃÜ°æ¿é
+ç§å¯†ç‰ˆå—
 <?php } else { if($forum['redirect']) { ?>
-<a href="<?php echo $forumurl;?>" class="xi2">Á´½Óµ½Íâ²¿µØÖ·</a>
+<a href="<?php echo $forumurl;?>" class="xi2">é“¾æ¥åˆ°å¤–éƒ¨åœ°å€</a>
 <?php } elseif(is_array($forum['lastpost'])) { if($cat['forumcolumns'] < 3) { ?>
 <a href="forum.php?mod=redirect&amp;tid=<?php echo $forum['lastpost']['tid'];?>&amp;goto=lastpost#lastpost" class="xi2"><?php echo cutstr($forum['lastpost']['subject'], 30); ?></a> <cite><?php echo $forum['lastpost']['dateline'];?> <?php if($forum['lastpost']['author']) { ?><?php echo $forum['lastpost']['author'];?><?php } else { ?><?php echo $_G['setting']['anonymoustext'];?><?php } ?></cite>
 <?php } else { ?>
-<a href="forum.php?mod=redirect&amp;tid=<?php echo $forum['lastpost']['tid'];?>&amp;goto=lastpost#lastpost">×îºó·¢±í: <?php echo $forum['lastpost']['dateline'];?></a>
+<a href="forum.php?mod=redirect&amp;tid=<?php echo $forum['lastpost']['tid'];?>&amp;goto=lastpost#lastpost">æœ€åå‘è¡¨: <?php echo $forum['lastpost']['dateline'];?></a>
 <?php } } else { ?>
-´ÓÎ´
+ä»æœª
 <?php } } ?>
 </dd>
 <?php if(!empty($_G['setting']['pluginhooks']['index_forum_extra'][$forum[fid]])) echo $_G['setting']['pluginhooks']['index_forum_extra'][$forum[fid]];?>
@@ -484,8 +484,8 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
 <?php } ?>
 </td>
 <td>
-<h2><a href="<?php echo $forumurl;?>"<?php if($forum['redirect']) { ?> target="_blank"<?php } if($forum['extra']['namecolor']) { ?> style="color: <?php echo $forum['extra']['namecolor'];?>;"<?php } ?>><?php echo $forum['name'];?></a><?php if($forum['todayposts'] && !$forum['redirect']) { ?><em class="xw0 xi1" title="½ñÈÕ"> (<?php echo $forum['todayposts'];?>)</em><?php } ?></h2>
-<?php if($forum['description']) { ?><p class="xg2"><?php echo $forum['description'];?></p><?php } if($forum['subforums']) { ?><p>×Ó°æ¿é: <?php echo $forum['subforums'];?></p><?php } if($forum['moderators']) { ?><p>°æÖ÷: <span class="xi2"><?php echo $forum['moderators'];?></span></p><?php } ?>
+<h2><a href="<?php echo $forumurl;?>"<?php if($forum['redirect']) { ?> target="_blank"<?php } if($forum['extra']['namecolor']) { ?> style="color: <?php echo $forum['extra']['namecolor'];?>;"<?php } ?>><?php echo $forum['name'];?></a><?php if($forum['todayposts'] && !$forum['redirect']) { ?><em class="xw0 xi1" title="ä»Šæ—¥"> (<?php echo $forum['todayposts'];?>)</em><?php } ?></h2>
+<?php if($forum['description']) { ?><p class="xg2"><?php echo $forum['description'];?></p><?php } if($forum['subforums']) { ?><p>å­ç‰ˆå—: <?php echo $forum['subforums'];?></p><?php } if($forum['moderators']) { ?><p>ç‰ˆä¸»: <span class="xi2"><?php echo $forum['moderators'];?></span></p><?php } ?>
 <?php if(!empty($_G['setting']['pluginhooks']['index_forum_extra'][$forum[fid]])) echo $_G['setting']['pluginhooks']['index_forum_extra'][$forum[fid]];?>
 </td>
 <td class="fl_i">
@@ -494,13 +494,13 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
 <td class="fl_by">
 <div>
 <?php if($forum['permission'] == 1) { ?>
-Ë½ÃÜ°æ¿é
+ç§å¯†ç‰ˆå—
 <?php } else { if($forum['redirect']) { ?>
-<a href="<?php echo $forumurl;?>" class="xi2">Á´½Óµ½Íâ²¿µØÖ·</a>
+<a href="<?php echo $forumurl;?>" class="xi2">é“¾æ¥åˆ°å¤–éƒ¨åœ°å€</a>
 <?php } elseif(is_array($forum['lastpost'])) { ?>
 <a href="forum.php?mod=redirect&amp;tid=<?php echo $forum['lastpost']['tid'];?>&amp;goto=lastpost#lastpost" class="xi2"><?php echo cutstr($forum['lastpost']['subject'], 30); ?></a> <cite><?php echo $forum['lastpost']['dateline'];?> <?php if($forum['lastpost']['author']) { ?><?php echo $forum['lastpost']['author'];?><?php } else { ?><?php echo $_G['setting']['anonymoustext'];?><?php } ?></cite>
 <?php } else { ?>
-´ÓÎ´
+ä»æœª
 <?php } } ?>
 </div>
 </td>
@@ -523,28 +523,28 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
 <div id="online" class="bm oll">
 <div class="bm_h">
 <?php if($detailstatus) { ?>
-<span class="o"><a href="forum.php?showoldetails=no#online" title="ÊÕÆğ/Õ¹¿ª"><img src="<?php echo IMGDIR;?>/collapsed_no.gif" alt="ÊÕÆğ/Õ¹¿ª" /></a></span>
+<span class="o"><a href="forum.php?showoldetails=no#online" title="æ”¶èµ·/å±•å¼€"><img src="<?php echo IMGDIR;?>/collapsed_no.gif" alt="æ”¶èµ·/å±•å¼€" /></a></span>
 <h3>
-<strong><a href="home.php?mod=space&amp;do=friend&amp;view=online&amp;type=member">ÔÚÏß»áÔ±</a></strong>
-<span class="xs1">- <strong><?php echo $onlinenum;?></strong> ÈËÔÚÏß
-- <strong><?php echo $membercount;?></strong> »áÔ±(<strong><?php echo $invisiblecount;?></strong> ÒşÉí),
-<strong><?php echo $guestcount;?></strong> Î»ÓÎ¿Í
-- ×î¸ß¼ÇÂ¼ÊÇ <strong><?php echo $onlineinfo['0'];?></strong> ÓÚ <strong><?php echo $onlineinfo['1'];?></strong>.</span>
+<strong><a href="home.php?mod=space&amp;do=friend&amp;view=online&amp;type=member">åœ¨çº¿ä¼šå‘˜</a></strong>
+<span class="xs1">- <strong><?php echo $onlinenum;?></strong> äººåœ¨çº¿
+- <strong><?php echo $membercount;?></strong> ä¼šå‘˜(<strong><?php echo $invisiblecount;?></strong> éšèº«),
+<strong><?php echo $guestcount;?></strong> ä½æ¸¸å®¢
+- æœ€é«˜è®°å½•æ˜¯ <strong><?php echo $onlineinfo['0'];?></strong> äº <strong><?php echo $onlineinfo['1'];?></strong>.</span>
 </h3>
 <?php } else { if(empty($_G['setting']['sessionclose'])) { ?>
-<span class="o"><a href="forum.php?showoldetails=yes#online" title="ÊÕÆğ/Õ¹¿ª"><img src="<?php echo IMGDIR;?>/collapsed_yes.gif" alt="ÊÕÆğ/Õ¹¿ª" /></a></span>
+<span class="o"><a href="forum.php?showoldetails=yes#online" title="æ”¶èµ·/å±•å¼€"><img src="<?php echo IMGDIR;?>/collapsed_yes.gif" alt="æ”¶èµ·/å±•å¼€" /></a></span>
 <?php } ?>
 <h3>
 <strong>
 <?php if(!empty($_G['setting']['whosonlinestatus'])) { ?>
-ÔÚÏß»áÔ±
+åœ¨çº¿ä¼šå‘˜
 <?php } else { ?>
-<a href="home.php?mod=space&amp;do=friend&amp;view=online&amp;type=member">ÔÚÏß»áÔ±</a>
+<a href="home.php?mod=space&amp;do=friend&amp;view=online&amp;type=member">åœ¨çº¿ä¼šå‘˜</a>
 <?php } ?>
 </strong>
-<span class="xs1">- ×Ü¼Æ <strong><?php echo $onlinenum;?></strong> ÈËÔÚÏß
-<?php if($membercount) { ?>- <strong><?php echo $membercount;?></strong> »áÔ±,<strong><?php echo $guestcount;?></strong> Î»ÓÎ¿Í<?php } ?>
-- ×î¸ß¼ÇÂ¼ÊÇ <strong><?php echo $onlineinfo['0'];?></strong> ÓÚ <strong><?php echo $onlineinfo['1'];?></strong>.</span>
+<span class="xs1">- æ€»è®¡ <strong><?php echo $onlinenum;?></strong> äººåœ¨çº¿
+<?php if($membercount) { ?>- <strong><?php echo $membercount;?></strong> ä¼šå‘˜,<strong><?php echo $guestcount;?></strong> ä½æ¸¸å®¢<?php } ?>
+- æœ€é«˜è®°å½•æ˜¯ <strong><?php echo $onlineinfo['0'];?></strong> äº <strong><?php echo $onlineinfo['1'];?></strong>.</span>
 </h3>
 <?php } ?>
 </div>
@@ -554,7 +554,7 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
 <?php if($detailstatus) { ?>
 <dd class="ptm pbm">
 <ul class="cl">
-<?php if($whosonline) { if(is_array($whosonline)) foreach($whosonline as $key => $online) { ?><li title="Ê±¼ä: <?php echo $online['lastactivity'];?>">
+<?php if($whosonline) { if(is_array($whosonline)) foreach($whosonline as $key => $online) { ?><li title="æ—¶é—´: <?php echo $online['lastactivity'];?>">
 <img src="<?php echo STATICURL;?>image/common/<?php echo $online['icon'];?>" alt="icon" />
 <?php if($online['uid']) { ?>
 <a href="home.php?mod=space&amp;uid=<?php echo $online['uid'];?>"><?php echo $online['username'];?></a>
@@ -563,7 +563,7 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
 <?php } ?>
 </li>
 <?php } } else { ?>
-<li style="width: auto">µ±Ç°Ö»ÓĞÓÎ¿Í»òÒşÉí»áÔ±ÔÚÏß</li>
+<li style="width: auto">å½“å‰åªæœ‰æ¸¸å®¢æˆ–éšèº«ä¼šå‘˜åœ¨çº¿</li>
 <?php } ?>
 </ul>
 </dd>
@@ -606,10 +606,10 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
 <?php if(empty($topic) || ($topic['usefooter'])) { ?><?php $focusid = getfocus_rand($_G[basescript]);?><?php if($focusid !== null) { ?><?php $focus = $_G['cache']['focus']['data'][$focusid];?><?php $focusnum = count($_G['setting']['focus'][$_G[basescript]]);?><div class="focus" id="sitefocus">
 <div class="bm">
 <div class="bm_h cl">
-<a href="javascript:;" onclick="setcookie('nofocus_<?php echo $_G['basescript'];?>', 1, <?php echo $_G['cache']['focus']['cookie'];?>*3600);$('sitefocus').style.display='none'" class="y" title="¹Ø±Õ">¹Ø±Õ</a>
+<a href="javascript:;" onclick="setcookie('nofocus_<?php echo $_G['basescript'];?>', 1, <?php echo $_G['cache']['focus']['cookie'];?>*3600);$('sitefocus').style.display='none'" class="y" title="å…³é—­">å…³é—­</a>
 <h2>
-<?php if($_G['cache']['focus']['title']) { ?><?php echo $_G['cache']['focus']['title'];?><?php } else { ?>Õ¾³¤ÍÆ¼ö<?php } ?>
-<span id="focus_ctrl" class="fctrl"><img src="<?php echo IMGDIR;?>/pic_nv_prev.gif" alt="ÉÏÒ»Ìõ" title="ÉÏÒ»Ìõ" id="focusprev" class="cur1" onclick="showfocus('prev');" /> <em><span id="focuscur"></span>/<?php echo $focusnum;?></em> <img src="<?php echo IMGDIR;?>/pic_nv_next.gif" alt="ÏÂÒ»Ìõ" title="ÏÂÒ»Ìõ" id="focusnext" class="cur1" onclick="showfocus('next')" /></span>
+<?php if($_G['cache']['focus']['title']) { ?><?php echo $_G['cache']['focus']['title'];?><?php } else { ?>ç«™é•¿æ¨è<?php } ?>
+<span id="focus_ctrl" class="fctrl"><img src="<?php echo IMGDIR;?>/pic_nv_prev.gif" alt="ä¸Šä¸€æ¡" title="ä¸Šä¸€æ¡" id="focusprev" class="cur1" onclick="showfocus('prev');" /> <em><span id="focuscur"></span>/<?php echo $focusnum;?></em> <img src="<?php echo IMGDIR;?>/pic_nv_next.gif" alt="ä¸‹ä¸€æ¡" title="ä¸‹ä¸€æ¡" id="focusnext" class="cur1" onclick="showfocus('next')" /></span>
 </h2>
 </div>
 <div class="bm_c" id="focus_con">
@@ -623,7 +623,7 @@ initSearchmenu('scbar', '<?php echo $searchparams['url'];?>');
 <?php } ?>
 <dd><?php echo $_G['cache']['focus']['data'][$id]['summary'];?></dd>
 </dl>
-<p class="ptn cl"><a href="<?php echo $_G['cache']['focus']['data'][$id]['url'];?>" class="xi2 y" target="_blank">²é¿´ &raquo;</a></p>
+<p class="ptn cl"><a href="<?php echo $_G['cache']['focus']['data'][$id]['url'];?>" class="xi2 y" target="_blank">æŸ¥çœ‹ &raquo;</a></p>
 </div><?php $focusi ++;?><?php } ?>
 <script type="text/javascript">
 var focusnum = <?php echo $focusnum;?>;
@@ -663,7 +663,7 @@ GMT<?php echo $_G['timenow']['offset'];?>, <?php echo $_G['timenow']['time'];?>
 <p class="xs0">&copy; 2001-2012 <a href="http://www.comsenz.com" target="_blank">Comsenz Inc.</a></p>
 </div><?php updatesession();?><?php if($_G['uid'] && $_G['group']['allowinvisible']) { ?>
 <script type="text/javascript">
-var invisiblestatus = '<?php if($_G['session']['invisible']) { ?>ÒşÉí<?php } else { ?>ÔÚÏß<?php } ?>';
+var invisiblestatus = '<?php if($_G['session']['invisible']) { ?>éšèº«<?php } else { ?>åœ¨çº¿<?php } ?>';
 var loginstatusobj = $('loginstatusid');
 if(loginstatusobj != undefined && loginstatusobj != null) loginstatusobj.innerHTML = invisiblestatus;
 </script>
@@ -673,7 +673,7 @@ if(loginstatusobj != undefined && loginstatusobj != null) loginstatusobj.innerHT
 <?php if($upgradecredit !== false) { ?>
 <div id="g_upmine_menu" class="tip tip_3" style="display:none;">
 <div class="tip_c">
-»ı·Ö <?php echo $_G['member']['credits'];?>, ¾àÀëÏÂÒ»¼¶»¹Ğè <?php echo $upgradecredit;?> »ı·Ö
+ç§¯åˆ† <?php echo $_G['member']['credits'];?>, è·ç¦»ä¸‹ä¸€çº§è¿˜éœ€ <?php echo $upgradecredit;?> ç§¯åˆ†
 </div>
 <div class="tip_horn"></div>
 </div>
@@ -699,7 +699,7 @@ if(loginstatusobj != undefined && loginstatusobj != null) loginstatusobj.innerHT
 <?php } if($_G['member']['newprompt'] && (empty($_G['cookie']['promptstate_'.$_G['uid']]) || $_G['cookie']['promptstate_'.$_G['uid']] != $_G['member']['newprompt']) && $_GET['do'] != 'notice') { ?>
 <script type="text/javascript">noticeTitle();</script>
 <?php } ?><?php userappprompt();?><?php if($_G['basescript'] != 'userapp') { ?>
-<span id="scrolltop" onclick="window.scrollTo('0','0')">»Ø¶¥²¿</span>
+<span id="scrolltop" onclick="window.scrollTo('0','0')">å›é¡¶éƒ¨</span>
 <script type="text/javascript">_attachEvent(window, 'scroll', function(){showTopLink();});checkBlind();</script>
 <?php } ?><?php output();?></body>
 </html>

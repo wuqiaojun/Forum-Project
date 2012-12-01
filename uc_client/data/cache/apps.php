@@ -1,11 +1,11 @@
-<?php
+<?php
 $_CACHE['apps'] = array (
   1 => 
   array (
     'appid' => '1',
     'type' => 'DISCUZX',
     'name' => 'Discuz! Board',
-    'url' => 'http://localhost/Forum-Project',
+    'url' => 'http://www.jinfuyuan.net/bbs',
     'ip' => '',
     'viewprourl' => '',
     'apifilename' => 'uc.php',
@@ -17,6 +17,6 @@ $_CACHE['apps'] = array (
     'tagtemplates' => '',
     'allowips' => '',
   ),
-);
-
+);
+
 ?>

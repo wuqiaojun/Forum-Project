@@ -1,6 +1,6 @@
 <?php
 //Discuz! cache file, DO NOT modify me!
-//Identify: 23b63d816581f3db6fd6e4617621b4d0
+//Identify: aae10b24344fc8092a324f3867ab0072
 
 $adminextend = array (
   0 => 'cloud.php',

@@ -3,10 +3,10 @@
 <?php if(empty($topic) || ($topic['usefooter'])) { ?><?php $focusid = getfocus_rand($_G[basescript]);?><?php if($focusid !== null) { ?><?php $focus = $_G['cache']['focus']['data'][$focusid];?><?php $focusnum = count($_G['setting']['focus'][$_G[basescript]]);?><div class="focus" id="sitefocus">
 <div class="bm">
 <div class="bm_h cl">
-<a href="javascript:;" onclick="setcookie('nofocus_<?php echo $_G['basescript'];?>', 1, <?php echo $_G['cache']['focus']['cookie'];?>*3600);$('sitefocus').style.display='none'" class="y" title="¹Ø±Õ">¹Ø±Õ</a>
+<a href="javascript:;" onclick="setcookie('nofocus_<?php echo $_G['basescript'];?>', 1, <?php echo $_G['cache']['focus']['cookie'];?>*3600);$('sitefocus').style.display='none'" class="y" title="å…³é—­">å…³é—­</a>
 <h2>
-<?php if($_G['cache']['focus']['title']) { ?><?php echo $_G['cache']['focus']['title'];?><?php } else { ?>Õ¾³¤ÍÆ¼ö<?php } ?>
-<span id="focus_ctrl" class="fctrl"><img src="<?php echo IMGDIR;?>/pic_nv_prev.gif" alt="ÉÏÒ»Ìõ" title="ÉÏÒ»Ìõ" id="focusprev" class="cur1" onclick="showfocus('prev');" /> <em><span id="focuscur"></span>/<?php echo $focusnum;?></em> <img src="<?php echo IMGDIR;?>/pic_nv_next.gif" alt="ÏÂÒ»Ìõ" title="ÏÂÒ»Ìõ" id="focusnext" class="cur1" onclick="showfocus('next')" /></span>
+<?php if($_G['cache']['focus']['title']) { ?><?php echo $_G['cache']['focus']['title'];?><?php } else { ?>ç«™é•¿æ¨è<?php } ?>
+<span id="focus_ctrl" class="fctrl"><img src="<?php echo IMGDIR;?>/pic_nv_prev.gif" alt="ä¸Šä¸€æ¡" title="ä¸Šä¸€æ¡" id="focusprev" class="cur1" onclick="showfocus('prev');" /> <em><span id="focuscur"></span>/<?php echo $focusnum;?></em> <img src="<?php echo IMGDIR;?>/pic_nv_next.gif" alt="ä¸‹ä¸€æ¡" title="ä¸‹ä¸€æ¡" id="focusnext" class="cur1" onclick="showfocus('next')" /></span>
 </h2>
 </div>
 <div class="bm_c" id="focus_con">
@@ -20,7 +20,7 @@
 <?php } ?>
 <dd><?php echo $_G['cache']['focus']['data'][$id]['summary'];?></dd>
 </dl>
-<p class="ptn cl"><a href="<?php echo $_G['cache']['focus']['data'][$id]['url'];?>" class="xi2 y" target="_blank">²é¿´ &raquo;</a></p>
+<p class="ptn cl"><a href="<?php echo $_G['cache']['focus']['data'][$id]['url'];?>" class="xi2 y" target="_blank">æŸ¥çœ‹ &raquo;</a></p>
 </div><?php $focusi ++;?><?php } ?>
 <script type="text/javascript">
 var focusnum = <?php echo $focusnum;?>;
@@ -60,7 +60,7 @@ GMT<?php echo $_G['timenow']['offset'];?>, <?php echo $_G['timenow']['time'];?>
 <p class="xs0">&copy; 2001-2012 <a href="http://www.comsenz.com" target="_blank">Comsenz Inc.</a></p>
 </div><?php updatesession();?><?php if($_G['uid'] && $_G['group']['allowinvisible']) { ?>
 <script type="text/javascript">
-var invisiblestatus = '<?php if($_G['session']['invisible']) { ?>ÒşÉí<?php } else { ?>ÔÚÏß<?php } ?>';
+var invisiblestatus = '<?php if($_G['session']['invisible']) { ?>éšèº«<?php } else { ?>åœ¨çº¿<?php } ?>';
 var loginstatusobj = $('loginstatusid');
 if(loginstatusobj != undefined && loginstatusobj != null) loginstatusobj.innerHTML = invisiblestatus;
 </script>
@@ -70,7 +70,7 @@ if(loginstatusobj != undefined && loginstatusobj != null) loginstatusobj.innerHT
 <?php if($upgradecredit !== false) { ?>
 <div id="g_upmine_menu" class="tip tip_3" style="display:none;">
 <div class="tip_c">
-»ı·Ö <?php echo $_G['member']['credits'];?>, ¾àÀëÏÂÒ»¼¶»¹Ğè <?php echo $upgradecredit;?> »ı·Ö
+ç§¯åˆ† <?php echo $_G['member']['credits'];?>, è·ç¦»ä¸‹ä¸€çº§è¿˜éœ€ <?php echo $upgradecredit;?> ç§¯åˆ†
 </div>
 <div class="tip_horn"></div>
 </div>
@@ -96,7 +96,7 @@ if(loginstatusobj != undefined && loginstatusobj != null) loginstatusobj.innerHT
 <?php } if($_G['member']['newprompt'] && (empty($_G['cookie']['promptstate_'.$_G['uid']]) || $_G['cookie']['promptstate_'.$_G['uid']] != $_G['member']['newprompt']) && $_GET['do'] != 'notice') { ?>
 <script type="text/javascript">noticeTitle();</script>
 <?php } ?><?php userappprompt();?><?php if($_G['basescript'] != 'userapp') { ?>
-<span id="scrolltop" onclick="window.scrollTo('0','0')">»Ø¶¥²¿</span>
+<span id="scrolltop" onclick="window.scrollTo('0','0')">å›é¡¶éƒ¨</span>
 <script type="text/javascript">_attachEvent(window, 'scroll', function(){showTopLink();});checkBlind();</script>
 <?php } ?><?php output();?></body>
 </html>
